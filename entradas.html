@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Entradas | Neon Party</title>
+    <link href="entradas.css" rel="stylesheet" type="text/css">
+    <script src="script.js"></script>
+    <link rel="icon" href="img/logo-web-tarea2.6.webp">
+    <!--Link General todos los iconos-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+    <!--Link General todas las tipografias-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!--Link Tipografia titulo "neon"-->
+    <link href="https://fonts.googleapis.com/css2?family=Croissant+One&family=Neonderthaw&display=swap" rel="stylesheet">
+    <!--Link Tipografia menu neon-->
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Tilt+Neon&display=swap" rel="stylesheet">
+    <!--Link Tipografia descripcion neon-->
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Shadows+Into+Light&family=Tilt+Neon&display=swap" rel="stylesheet">
+  </head>
+  
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.68/pdfmake.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.68/vfs_fonts.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.3.2/html2canvas.min.js"></script>
+
+  
+  <body>
+    <header>
+      <div class="box-header">
+       <div class="logo">
+          <img src="img/logo-web-tarea2.6.webp" alt="Logo Neon Party">
+        </div>
+        <div class="titulo">
+           <h1>Fiesta <span>Benefica</span></h1>
+         </div>
+       <div class="ies">
+         <img src="img/ies-calvia.webp" alt="ies calvia logo">
+        </div>
+       </div>
+    </header>
+    <main>
+      <form>
+        <div class="box-form-personal">
+          <h3>
+            <span class="material-symbols-outlined">person</span>
+            Datos Personales</h3>
+          <div class="box-form-personal-datos">
+            <div class="box-form-question">
+             <label for="nombre">Nombre</label>
+             <input type="text" id="nombre" name="nombre">
+            </div>
+            <div class="box-form-question">
+              <label for="apellido">Apellidos</label>
+             <input type="text" id="apellido" name="apellido">
+            </div>
+            <div class="box-form-question">
+              <label for="telefono">Telefono</label>
+             <input type="text" id="telefono" name="telefono">
+            </div>
+            <div class="box-form-question">
+              <label for="email">Email</label>
+             <input type="email" id="email" name="email" placeholder="usuario@iescalvia.com">
+            </div>
+          </div>
+        </div>
+        <div class="box-form-personal">
+          <h3>
+            <span class="material-symbols-outlined">shopping_cart</span>
+            Datos Pedido</h3>
+            <div class="box-entradas-datos">
+              <label for="cantidad">Cantidad</label>
+              <input type="number" id="cantidad" name="cantidad" min="1">
+            </div>
+          <div class="dibujo">
+          <div class="ticket-box">
+            <div class="ticket-line-circle"></div>
+            <div class="ticket-line-box">
+              <div class="ticket-lone-circle"></div>
+              <div class="ticket-lone-circle"></div>
+              <div class="ticket-lone-circle"></div>
+              <div class="ticket-lone-circle"></div>
+              <div class="ticket-lone-circle"></div>
+              <div class="ticket-lone-circle"></div>
+              <div class="ticket-lone-circle"></div>
+            </div>
+            <div class="ticket-line-circle"></div>
+          </div>
+          </div>
+        </div>
+      </form>
+      
+    </main>
+    
+    <footer>
+      <div class="footer">
+      <div class="box-footer">
+        <img src="img/logo-web-tarea2.6.webp" alt="Logo-web">
+      </div>
+      <div class="box-footer-info">
+        <div class="card-footer" id="contacto">
+          <h4>Contacto</h4>
+          <div class="card-text">
+          <p><span class="material-symbols-outlined">
+            mail
+            </span>p_alemanyt@a.iescalvia.com</p>
+          <p><span class="material-symbols-outlined">
+            location_on
+            </span>Av. son Pillo, 1, 07180 Galatzo, Illes Balears</p>
+            </div>
+        </div>
+        <div class="card-footer">
+          <h4>Metodos de Pago</h4>
+          <div class="pay-box">
+            <div class="pay-icon"><img src="img/visa.png" alt="visa"></div>
+            <div class="pay-icon"><img src="img/paypal.png" alt="paypal"></div>
+            <div class="pay-icon"><img src="img/mastercard.png" alt="mastercard"></div>
+          
+          </div>
+
+        </div>
+
+        <div class="card-footer">
+          <h4>Desarollador</h4>
+          <div class="card-text">
+          <img src="img/desarollador.webp" alt="perfil-desarollador">
+            </div>
+        </div>
+      </div>
+      </div>
+      <p class="copyright">Copyright &#169; 2023 Pere Alemany</p>
+
+    </footer>
+    
+  </body>
+</html>
+
+
+
+
+
+
+<script>
+  document.getElementById("boton-reserva-completada").addEventListener("click", async function () {
+    const element = document.getElementById("descargue-pdfid");
+
+    const header = await html2canvas(element.querySelector(".reserva-header")).then(canvas => canvas.toDataURL('image/png'));
+    const main = await html2canvas(element.querySelector(".titulo-main-reserva")).then(canvas => canvas.toDataURL('image/png'));
+    const form = await html2canvas(element.querySelector(".form")).then(canvas => canvas.toDataURL('image/png'));
+
+    const content = [
+      { image: header, width: 500, alignment: 'center' }, // Centra horizontalmente
+      { image: main, width: 2100, height: 100, alignment: 'center' }, // Centra horizontalmente
+      { image: form, width: 1150, height: 400, alignment: 'center' }, // Centra horizontalmente
+    ];
+
+    const documentDefinition = {
+      content: content,
+      pageSize: 'A4',
+      pageMargins: [40, 60, 40, 60],
+    };
+
+    pdfMake.createPdf(documentDefinition).download('balearic-tours_reserva.pdf');
+  });
+
+</script>
+
+
+
+
+<!-- Icono Entrada -->
+
+<!-- <span class="icon">
+<svg width="24" height="22" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_101_2)"><path d="M2.1124 11.3225L2.45914 11.6563L2.79642 11.3317H2.86429L3.00949 11.1919C3.29096 10.921 3.73121 10.921 4.01268 11.1919C4.28341 11.4525 4.28341 11.844 4.01268 12.1046L3.8778 12.2344C3.87751 12.2347 3.87723 12.235 3.87694 12.2352L3.85942 12.2521L3.5027 12.5955L3.87694 12.9557L5.23428 14.2622C5.41798 14.4391 5.6567 14.5 5.8525 14.5C6.04829 14.5 6.28702 14.4391 6.47071 14.2622L6.47365 14.2594L14.6844 6.22534C14.8692 6.04633 14.9377 5.80763 14.9377 5.60553C14.9377 5.40277 14.8688 5.16319 14.6826 4.98399L13.3253 3.67746L12.9785 3.34369L12.6318 3.67746L12.5639 3.74278L12.4961 3.80811C12.2146 4.07904 11.7743 4.07904 11.4929 3.80811C11.2221 3.54751 11.2221 3.15601 11.4929 2.89541L11.6286 2.76475L11.6461 2.74789L12.0029 2.40452L11.6286 2.04429L10.2713 0.737759C10.0876 0.560939 9.84885 0.5 9.65306 0.5C9.45726 0.5 9.21854 0.560939 9.03484 0.737756L9.03338 0.739176L0.755054 8.77293C0.754729 8.77325 0.754405 8.77356 0.75408 8.77387C0.568646 8.95297 0.5 9.19207 0.5 9.39447C0.5 9.59723 0.568886 9.83681 0.755054 10.016L2.1124 11.3225Z" stroke="currentColor"></path><line x1="7.24313" y1="4.24823" x2="11.0556" y2="7.92992" stroke="currentColor" stroke-width="0.7"></line></g><defs><clipPath id="clip0_101_2"><rect width="16" height="15" fill="currentColor" <="" clippath=""></rect></clipPath></defs></svg>
+</span> -->

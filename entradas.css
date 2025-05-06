@@ -1,0 +1,354 @@
+/*
+Paleta de Colores
+#01043A - Azul oscuro
+#FF00FF - Rosa neon
+#0FD80F - Verde neon
+#FAD026 - Amarillo neon
+#6EC2EB - Azul claro
+*/
+/*Estructura Base*/
+@import url('script.js');
+html {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+
+}
+body{
+  height: 100%;
+  width: 100%;
+  background-image: url(img/fonfo-web.png);
+  background-size: cover; 
+  background-repeat: no-repeat; 
+  background-attachment: fixed;
+  margin: 0;
+  padding: 0;
+  cursor: url('cursor/NeonCursor05-Cyan.png'), auto;
+  scroll-padding: 1.25rem;
+  display: grid;
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+  grid-template-rows: min-content 1fr min-content;
+  min-height: 100vh;
+}
+
+header{
+  grid-area: header;
+  height: 150px;
+  background-color: #01043A;
+}
+main{
+  grid-area: main;
+}
+footer{
+  margin-top: 10px;
+  grid-area: footer;
+  background-color: #01043A;
+  width: 100%;
+}
+
+/*Header*/
+.box-header{
+  height: 150px;
+  display: grid;
+  background-color: lime;
+  grid-template-columns: max-content 1fr max-content;
+  min-width: 90%;
+  /* justify-content: center;
+  align-items: center; */
+  place-items: center;
+  margin: 0% 2%;
+}
+
+.logo{
+  height: 100px;
+  aspect-ratio: 1;
+}
+.logo img{
+  width: 100%;
+  height: 100%;
+}
+
+/* .titulo{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+} */
+.titulo h1{
+  font-size: clamp(27px, 3.1vw, 4.1vw);
+  color: #FE50EF;
+  white-space: nowrap;
+  display: flex ;
+  flex-direction: row;
+  padding: 1;
+  font-family: 'Anton', sans-serif;
+  font-family: 'Shadows Into Light', cursive;
+  font-family: 'Tilt Neon', sans-serif;
+  text-shadow: 0 0 5px #fff, 0 0 10px #ffffff, 0 0 15px #ff00ff, 0 0 20px #FF00FF, 0 0 35px #FF00FF, 0 0 40px #FF00FF, 0 0 50px #FF00FF, 0 0 75px #FF00FF; 
+  animation: neon-glow-pink 2s ease-in-out infinite alternate;
+}
+.titulo span{
+  margin-left: 2%;
+  color: #0FD80F;
+  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #0FD80F, 0 0 20px #0FD80F, 0 0 35px #0FD80F, 0 0 40px #0FD80F, 0 0 50px #0FD80F, 0 0 75px #0FD80F; 
+  animation: neon-glow-green 2s ease-in-out infinite alternate;
+  animation-delay: 0.5s;
+}
+
+.ies{
+   height: 100px;;
+  aspect-ratio: 1;
+  margin-right: 2%;
+}
+.ies img{
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+/*Footer*/
+.footer{
+  display: flex;
+  flex-wrap: wrap;
+}
+.box-footer{
+  margin: 5% 0% 0% 2%;
+}
+.box-footer img{
+  width:  clamp(14vw, 15vw, 16vw);
+  aspect-ratio: 1;
+  margin: 5%;
+}
+.box-footer-info{
+  margin-top: 4%;
+  margin-left: 10%;
+  color: #fff;
+  display: flex;
+  /* flex-wrap: wrap; */
+  width: 70%;
+}
+.card-footer{
+  margin: 5% 5% 5% 5% ;
+  aspect-ratio: 1;
+  width: 50%;
+  border-radius: clamp(3px, 15px, 40px);
+  background: #01043A;
+  box-shadow:  41px 41px 82px #000217,
+               -41px -41px 82px #02065d;
+  padding: 0.4%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card-footer span{
+  font-size: clamp(3px, 1vw, 1.4vw);
+}
+.card-footer p{
+  font-size:  clamp(3px, 1vw, 1.4vw);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+}
+.card-footer img{
+  width: clamp(25px, 6vw, 8vw);
+  border-radius: 20%;
+  aspect-ratio: 1;
+  margin: 2%;
+}
+.card-footer h4{
+  font-family: 'Anton', sans-serif;
+  font-family: 'Shadows Into Light', cursive;
+  font-family: 'Tilt Neon', sans-serif;
+  font-size: clamp(1.3vw, 1.8vw, 2.3vw);
+  color: #0071b8;
+  text-shadow: 0 0 2px #4DABEC, 0 0 10px #4DABEC, 0 0 15px #4DABEC, 0 0 20px #4DABEC, 0 0 30px #4DABEC; 
+}
+
+/*Metodos de pago*/
+.pay-box{
+  margin: 1%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+
+}
+.pay-icon{
+  margin: 8%;
+}
+.pay-box img{
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 0;
+}
+
+.copyright{
+  text-align: center;
+  color: white;
+  padding: 1%;
+  font-size:  clamp(5px, 1vw, 1.4vw);
+}
+
+/*CSS para dispositivos mobiles*/
+@media screen and (min-width: 768px) {
+  
+}
+
+
+
+/*Animaciones*/
+@keyframes neon-glow-green {
+  from {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #0FD80F, 0 0 20px #0FD80F, 0 0 35px #0FD80F, 0 0 40px #0FD80F, 0 0 50px #0FD80F, 0 0 75px #0FD80F;
+  }
+  to {
+    text-shadow: 0 0 2.5px #fff, 0 0 5px #fff, 0 0 7.5px #0FD80F, 0 0 10px #0FD80F, 0 0 17.5px #0FD80F, 0 0 20px #0FD80F, 0 0 25px #0FD80F, 0 0 37.5px #0FD80F;
+  }
+
+}
+@keyframes neon-glow-yellow {
+  from {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #FAD026, 0 0 20px #FAD026, 0 0 35px #FAD026, 0 0 40px #FAD026, 0 0 50px #FAD026;
+  }
+  to {
+    text-shadow: 0 0 2.5px #fff, 0 0 5px #fff, 0 0 7.5px #FAD026, 0 0 10px #FAD026, 0 0 17.5px #FAD026, 0 0 20px #FAD026, 0 0 25px #FAD026;
+  }
+}
+@keyframes neon-glow-pink {
+  from {
+    text-shadow: 0 0 5px #fff, 0 0 10px #ffffff, 0 0 15px #ff00ff, 0 0 20px #FF00FF, 0 0 35px #FF00FF, 0 0 40px #FF00FF, 0 0 50px #FF00FF, 0 0 75px #FF00FF;
+  }
+  to {
+    text-shadow: 0 0 2.5px #fff, 0 0 5px #ffffff, 0 0 7.5px #ff00ff, 0 0 10px #FF00FF, 0 0 17.5px #FF00FF, 0 0 20px #FF00FF, 0 0 25px #FF00FF, 0 0 37.5px #FF00FF;
+  }
+}
+@keyframes neon-parpadeo-yellow{
+  0%{opacity: 1;}
+  25%{opacity: 0.4;}
+  50%{opacity: 0.8;}
+  75%{opacity: 0.6;}
+  100%{opacity: 0.2;}
+}
+@keyframes parpadeo {  
+  0% { color: #6EC2EB;
+       text-shadow: 0 0 5px #4DABEC, 0 0 10px #4DABEC, 0 0 15px #4DABEC, 0 0 20px #4DABEC, 0 0 35px #4DABEC;
+       opacity: 1;}
+  5%{opacity: 0.3;}
+  10%{opacity: 0.9;}
+  15%{opacity: 0.6;}
+  20%{opacity: 0.2;}
+  25%{ color: #FF00FF;
+       text-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff, 0 0 15px #ff00ff, 0 0 20px #FF00FF, 0 0 35px #FF00FF;
+       opacity: 1;
+    }
+  30%{opacity: 0.6;}
+  35%{opacity: 0.3;}
+  40%{opacity: 0.8;}
+  45%{opacity: 0.2;}
+  50%{ color: #FAD026;
+     text-shadow: 0 0 5px #FAD026, 0 0 10px #FAD026, 0 0 15px #FAD026, 0 0 20px #FAD026, 0 0 35px #FAD026;
+     opacity: 1;
+     }
+  55%{opacity: 0.4;}
+  60%{opacity: 0.1;}
+  65%{opacity: 0.8;}
+  70%{opacity: 0.2;}
+  75%{ color: #0FD80F;
+       text-shadow: 0 0 5px #0FD80F, 0 0 10px #0FD80F, 0 0 15px #0FD80F, 0 0 20px #0FD80F, 0 0 35px #0FD80F;
+      opacity: 1;
+  }
+  80%{opacity: 0.6;}
+  85%{opacity: 1;}
+  90%{opacity: 0.4;}
+  95%{opacity: 0.2;}
+  100% { color: white; 
+         text-shadow: 0 0 5px #fff, 0 0 10px #ffffff, 0 0 15px #fff, 0 0 20px #fff, 0 0 35px #fff}
+}
+
+
+/* Stilo general todos los iconos */
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
+}
+
+
+/*Ticket*/
+.dibujo{
+  height: 500px;
+  width: 100%;
+  display: grid;
+  place-items: center;
+  background-color: white;
+}
+.ticket-box{
+  height: 300px;
+  width: 900px;
+  background-color: #01043A;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.ticket-line-box{
+  height: 100%;
+  width: 50px;
+  background-color: transparent;
+  position: relative;
+  left: 700px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.ticket-lone-circle{
+  height: 35px;
+  width: 35px;
+  border-radius: 100%;
+  background-color: white;
+}
+.ticket-line-circle:nth-child(1){
+  height: 70px;
+  width: 70px;
+  border-radius: 100%;
+  background-color: white;
+  position: relative;
+  left: -35px;
+}
+.ticket-line-circle{
+  height: 70px;
+  width: 70px;
+  border-radius: 100%;
+  background-color: white;
+  position: relative;
+  left: 745px;
+}
+/*
+
+HTML
+
+<div class="dibujo">
+<div class="ticket-box">
+  <div class="ticket-line-circle"></div>
+  <div class="ticket-line-box">
+    <div class="ticket-lone-circle"></div>
+    <div class="ticket-lone-circle"></div>
+    <div class="ticket-lone-circle"></div>
+    <div class="ticket-lone-circle"></div>
+    <div class="ticket-lone-circle"></div>
+    <div class="ticket-lone-circle"></div>
+    <div class="ticket-lone-circle"></div>
+  </div>
+  <div class="ticket-line-circle"></div>
+</div>
+</div>
+*/

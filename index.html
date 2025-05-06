@@ -1,0 +1,164 @@
+ <!DOCTYPE html>
+<html lang="es">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+  //boton menu 
+  $(document).ready(function () {
+    $('.contenedor').on('click', function () {
+      $(this).find('.hamburguesa').toggleClass('active');
+      $(this).find('.menu-box').toggleClass('active');
+      $('.menu-box').toggleClass('active');
+      localStorage.setItem('menu-boxIsActive', $('.menu-box').hasClass('active'));
+      $('.menu-index').toggleClass('active');
+      //
+      $('main').toggleClass('menuon');
+      localStorage.setItem('mainIsActive', $('main').hasClass('menuon'));
+      $('footer').toggleClass('menuon');
+      localStorage.setItem('footerIsActive', $('footer').hasClass('menuon'));
+      //
+      $('.box-header').toggleClass('active');
+      localStorage.setItem('box-headerIsActive', $('.box-header').hasClass('active'));
+      localStorage.setItem('menu-indexIsActive', $('.menu-index').hasClass('active'));
+    });
+  });
+</script>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Neon Party</title>
+  <link href="style.css" rel="stylesheet" type="text/css">
+  <script src="script.js"></script>
+  <link rel="icon" href="img/logo-web-tarea2.6.webp">
+  <!--Link General todos los iconos-->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+  <!--Link General todas las tipografias-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!--Link Tipografia titulo "neon"-->
+  <link href="https://fonts.googleapis.com/css2?family=Croissant+One&family=Neonderthaw&display=swap" rel="stylesheet">
+  <!--Link Tipografia menu neon-->
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Tilt+Neon&display=swap" rel="stylesheet">
+  <!--Link Tipografia descripcion neon-->
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Shadows+Into+Light&family=Tilt+Neon&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <header> 
+    <div class="box-header">
+    <div class="menu-box">
+    <div class="contenedor">
+      <div class="hamburguesa"></div>
+    </div>
+      
+    </div>
+     <div class="titulo">
+       <img src="img/logo-web-tarea2.6.webp" alt="Logo-web" class="imagen-neon">
+       <h1>Fiesta <span>Benefica</span></h1>
+     </div>
+    <div class="button">
+      <button class="entradas"> 
+        <!-- onclick="window.location.href='entradas.html'" -->
+        <span class="icon">
+        <span class="material-symbols-outlined">
+        confirmation_number
+        </span>
+        </span>
+        <!-- Entradas -->
+         
+      </button>
+    </div> 
+     </div>
+    <nav class="menu-index" id="menu">
+       <a href="#descripcion">Entradas</a>
+       <a href="#contacto">Contacto</a>
+       <a href="#horario">Horario</a>
+     </nav>
+  </header>
+  <main>
+    <h2 class="slogan">Súmate a la diversión y apoya nuestro viaje<br><b>¡Una fiesta inolvidable para un futuro brillante!</b></h2>
+    <div class="descripcion">
+     <div class="descripcion-texto" id="descripcion">
+      <p>¡Te invitamos a una noche llena de alegría y solidaridad! Únete a nosotros en nuestra fiesta para recaudar fondos destinados a nuestro viaje de estudios de bachillerato. El tema de la noche es <span>Neon</span>, donde disfrutarás de música en vivo, deliciosa comida y juegos emocionantes. Cada contribución nos acerca más a vivir una experiencia educativa única. ¡Ven y diviértete mientras apoyas nuestra causa!</p>
+     </div>
+    </div>
+    <div class="info">
+      
+      <div class="card" id="motivo">
+        <h4>Entradas</h4>
+        <p>Estos son los pasos para conseguir tu entrada</p>
+        <ol>
+          <li><p>Enviar un <a href="#contacto">email</a> con el numero de entradas.</p></li>
+          <li><p>Con la respuesta del email, ir a pagar el importe de <b>30€ por entrada en la <a href="#contacto">direccion.</a></b></p></li>
+          <li><p>Guardar el email con las entradas definitivas.</p></li>
+        </ol>
+      </div>
+      
+      <div class="card" id="horario">
+        <h4>Horario</h4>
+        <ul>
+          <li><p><span class="material-symbols-outlined">
+            schedule
+            </span>22:00</p></li>
+          <li><p><span class="material-symbols-outlined">
+            calendar_today
+            </span>29 Febrero 2024</p></li>
+          <li><p><span class="material-symbols-outlined">
+            location_on
+            </span>Ctra. Estellencs, 2, 07150 Andratx, Illes Balears</p></li>
+        </ul>
+      </div>
+      
+    </div>
+    <div class="anuncio">
+      <h5>Publicidad</h5>
+      <div class="anuncio-gif">
+        <img src="img/anuncio.gif" alt="Publicidad Suchard">
+        <img src="img/anuncio2.gif" alt="Publicidad Pepsi" class="pepsi">
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer">
+    <div class="box-footer">
+      <img src="img/logo-web-tarea2.6.webp" alt="Logo-web">
+    </div>
+    <div class="box-footer-info">
+      <div class="card-footer" id="contacto">
+        <h4>Contacto</h4>
+        <div class="card-text">
+        <p><span class="material-symbols-outlined">
+          mail
+          </span>p_alemanyt@a.iescalvia.com</p>
+        <p><span class="material-symbols-outlined">
+          location_on
+          </span>Av. son Pillo, 1, 07180 Galatzo, Illes Balears</p>
+          </div>
+      </div>
+      <div class="card-footer">
+        <h4>Enlaces</h4>
+        <div class="card-text">
+        <a href="#descripcion"><span class="material-symbols-outlined">
+          link
+          </span>Entradas</a>
+           <a href="#horario"><span class="material-symbols-outlined">
+             link
+             </span>Horario</a>
+        </div>
+        
+      </div>
+      
+      <div class="card-footer">
+        <h4>Desarollador</h4>
+        <div class="card-text">
+        <img src="img/desarollador.webp" alt="perfil-desarollador">
+          </div>
+      </div>
+    </div>
+    </div>
+    <p class="copyright">Copyright &#169; 2023 Pere Alemany</p>
+    
+  </footer> 
+</body>
+</html>
